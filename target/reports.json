@@ -1,0 +1,161 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 11014014300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 39,
+        "name": "Opening new Account from the home page link",
+        "description": "",
+        "id": "create-user;opening-new-account-from-the-home-page-link;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4202098900,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "Open Browser and launch the URL",
+            "match": {
+              "location": "Step_Definitions.open_Browser_and_launch_the_URL()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1574540100,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "User logged in by his credentials \"rohit1212\", \"123456\", \"Rohit\", \"kumar\", \"Notenplien\", \"Den Haag\", \"south Holland\", \"2555ZZ\", \"123456789\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"rohit1212\"",
+                  "offset": 34
+                },
+                {
+                  "val": "\"123456\"",
+                  "offset": 47
+                },
+                {
+                  "val": "\"Rohit\"",
+                  "offset": 57
+                },
+                {
+                  "val": "\"kumar\"",
+                  "offset": 66
+                },
+                {
+                  "val": "\"Notenplien\"",
+                  "offset": 75
+                },
+                {
+                  "val": "\"Den Haag\"",
+                  "offset": 89
+                },
+                {
+                  "val": "\"south Holland\"",
+                  "offset": 101
+                },
+                {
+                  "val": "\"2555ZZ\"",
+                  "offset": 118
+                },
+                {
+                  "val": "\"123456789\"",
+                  "offset": 128
+                }
+              ],
+              "location": "Step_Definitions.user_logged_in_by_his_credentials(String,String,String,String,String,String,String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1028504300,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "User clicks on Home link",
+            "match": {
+              "location": "Step_Definitions.user_clicks_on_Home_link()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 659510800,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "User click on the Open New Account link on the home page",
+            "match": {
+              "location": "Step_Definitions.user_click_on_the_Open_New_Account_link_on_the_home_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 711162000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "Create an account by entering the values",
+            "match": {
+              "location": "Step_Definitions.create_an_account_by_entering_the_values()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 60200,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "Message will be displayed as Your new account number: xxxxx capture the account number",
+            "match": {
+              "location": "Step_Definitions.message_will_be_displayed_as_Your_new_account_number_xxxxx_capture_the_account_number()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 32100,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "Click on the Accounts Overview link and verify the created account number is displayed",
+            "match": {
+              "location": "Step_Definitions.click_on_the_Accounts_Overview_link_and_verify_the_created_account_number_is_displayed()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@registration"
+          }
+        ]
+      }
+    ],
+    "name": "Create User",
+    "description": "  User creating new account",
+    "id": "create-user",
+    "keyword": "Feature",
+    "uri": "src/main/resources/features/CreateUser.feature",
+    "tags": []
+  }
+]
