@@ -18,7 +18,8 @@ public class Hooks extends CommonActions {
 
 	@Before
 	public void beforeScenarioChrome() {
-		Log = Logger.getLogger(this.getClass());
+		
+
 		try {
 			if (Get_Environment_Property("Browser").equalsIgnoreCase("chrome")) {
 				Log.info("Loading chrome Driver");

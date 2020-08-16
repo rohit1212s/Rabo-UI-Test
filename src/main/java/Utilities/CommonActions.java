@@ -26,8 +26,9 @@ public class CommonActions {
 	public static Logger Log;
 
 	public String Get_Environment_Property(String key) throws IOException {
+		Log = Logger.getLogger(this.getClass());
 		Properties prop = new Properties();
-		FileInputStream fin = new FileInputStream(new File(".//TestData//Environment.properties"));
+		FileInputStream fin = new FileInputStream(new File(".//src//main/resources//Environment.properties"));
 		prop.load(fin);
 		String value = prop.getProperty(key);
 		return value;

@@ -1,41 +1,41 @@
-2020-08-16 20:07:36,550  INFO [main] Hooks:27 - Loading chrome Driver
-2020-08-16 20:07:59,599  INFO [main] Hooks:27 - Loading chrome Driver
-2020-08-16 20:08:12,484  INFO [main] Hooks:119 - Element is Displayed
-2020-08-16 20:08:21,835  INFO [main] Hooks:97 - login Failed
-2020-08-16 20:08:23,138  INFO [main] Hooks:207 - 1)  - https://parabank.parasoft.com/parabank/admin.htm
-2020-08-16 20:08:23,218  INFO [main] Hooks:207 - 2)  - https://parabank.parasoft.com/parabank/index.htm
-2020-08-16 20:08:23,314  INFO [main] Hooks:207 - 3) About Us - https://parabank.parasoft.com/parabank/about.htm
-2020-08-16 20:08:23,398  INFO [main] Hooks:207 - 4) Services - https://parabank.parasoft.com/parabank/services.htm
-2020-08-16 20:08:23,490  INFO [main] Hooks:207 - 5) Products - http://www.parasoft.com/jsp/products.jsp
-2020-08-16 20:08:23,587  INFO [main] Hooks:207 - 6) Locations - http://www.parasoft.com/jsp/pr/contacts.jsp
-2020-08-16 20:08:23,675  INFO [main] Hooks:207 - 7) Admin Page - https://parabank.parasoft.com/parabank/admin.htm
-2020-08-16 20:08:23,763  INFO [main] Hooks:207 - 8) home - https://parabank.parasoft.com/parabank/index.htm
-2020-08-16 20:08:23,843  INFO [main] Hooks:207 - 9) about - https://parabank.parasoft.com/parabank/about.htm
-2020-08-16 20:08:23,923  INFO [main] Hooks:207 - 10) contact - https://parabank.parasoft.com/parabank/contact.htm
-2020-08-16 20:08:24,002  INFO [main] Hooks:207 - 11) Forgot login info? - https://parabank.parasoft.com/parabank/lookup.htm
-2020-08-16 20:08:24,103  INFO [main] Hooks:207 - 12) Register - https://parabank.parasoft.com/parabank/register.htm
-2020-08-16 20:08:24,183  INFO [main] Hooks:207 - 13) Withdraw Funds - https://parabank.parasoft.com/parabank/services/ParaBank?wsdl
-2020-08-16 20:08:24,279  INFO [main] Hooks:207 - 14) Transfer Funds - https://parabank.parasoft.com/parabank/services/ParaBank?wsdl
-2020-08-16 20:08:24,387  INFO [main] Hooks:207 - 15) Check Balances - https://parabank.parasoft.com/parabank/services/ParaBank?wsdl
-2020-08-16 20:08:24,483  INFO [main] Hooks:207 - 16) Make Deposits - https://parabank.parasoft.com/parabank/services/ParaBank?wsdl
-2020-08-16 20:08:24,573  INFO [main] Hooks:207 - 17) Bill Pay - https://parabank.parasoft.com/parabank/services/bank?_wadl&_type=xml
-2020-08-16 20:08:24,645  INFO [main] Hooks:207 - 18) Account History - https://parabank.parasoft.com/parabank/services/bank?_wadl&_type=xml
-2020-08-16 20:08:24,717  INFO [main] Hooks:207 - 19) Transfer Funds - https://parabank.parasoft.com/parabank/services/bank?_wadl&_type=xml
-2020-08-16 20:08:24,813  INFO [main] Hooks:207 - 20) READ MORE - https://parabank.parasoft.com/parabank/services.htm
-2020-08-16 20:08:24,885  INFO [main] Hooks:207 - 21) ParaBank Is Now Re-Opened - https://parabank.parasoft.com/parabank/news.htm#6
-2020-08-16 20:08:24,957  INFO [main] Hooks:207 - 22) New! Online Bill Pay - https://parabank.parasoft.com/parabank/news.htm#5
-2020-08-16 20:08:25,029  INFO [main] Hooks:207 - 23) New! Online Account Transfers - https://parabank.parasoft.com/parabank/news.htm#4
-2020-08-16 20:08:25,121  INFO [main] Hooks:207 - 24) READ MORE - https://parabank.parasoft.com/parabank/news.htm
-2020-08-16 20:08:25,205  INFO [main] Hooks:207 - 25) Home - https://parabank.parasoft.com/parabank/index.htm
-2020-08-16 20:08:25,285  INFO [main] Hooks:207 - 26) About Us - https://parabank.parasoft.com/parabank/about.htm
-2020-08-16 20:08:25,373  INFO [main] Hooks:207 - 27) Services - https://parabank.parasoft.com/parabank/services.htm
-2020-08-16 20:08:25,461  INFO [main] Hooks:207 - 28) Products - http://www.parasoft.com/jsp/products.jsp
-2020-08-16 20:08:25,557  INFO [main] Hooks:207 - 29) Locations - http://www.parasoft.com/jsp/pr/contacts.jsp
-2020-08-16 20:08:25,660  INFO [main] Hooks:207 - 30) Forum - http://forums.parasoft.com/
-2020-08-16 20:08:25,756  INFO [main] Hooks:207 - 31) Site Map - https://parabank.parasoft.com/parabank/sitemap.htm
-2020-08-16 20:08:25,844  INFO [main] Hooks:207 - 32) Contact Us - https://parabank.parasoft.com/parabank/contact.htm
-2020-08-16 20:08:25,924  INFO [main] Hooks:207 - 33) www.parasoft.com - http://www.parasoft.com/
-2020-08-16 20:08:25,956  INFO [main] Hooks:224 - File verified successfully
-2020-08-16 20:08:26,878  INFO [main] Hooks:27 - Loading chrome Driver
-2020-08-16 20:08:42,427  INFO [main] Hooks:119 - Element is Displayed
-2020-08-16 20:08:50,461  INFO [main] Hooks:97 - login Failed
+2020-08-17 00:46:52,312  INFO [main] Hooks:25 - Loading chrome Driver
+2020-08-17 00:47:36,715  INFO [main] Hooks:25 - Loading chrome Driver
+2020-08-17 00:47:51,164  INFO [main] StepDefinitions:116 - Element is Displayed
+2020-08-17 00:47:59,895  INFO [main] StepDefinitions:97 - login Failed
+2020-08-17 00:48:01,087  INFO [main] StepDefinitions:207 - 1)  - https://parabank.parasoft.com/parabank/admin.htm
+2020-08-17 00:48:01,165  INFO [main] StepDefinitions:207 - 2)  - https://parabank.parasoft.com/parabank/index.htm
+2020-08-17 00:48:01,259  INFO [main] StepDefinitions:207 - 3) About Us - https://parabank.parasoft.com/parabank/about.htm
+2020-08-17 00:48:01,340  INFO [main] StepDefinitions:207 - 4) Services - https://parabank.parasoft.com/parabank/services.htm
+2020-08-17 00:48:01,439  INFO [main] StepDefinitions:207 - 5) Products - http://www.parasoft.com/jsp/products.jsp
+2020-08-17 00:48:01,529  INFO [main] StepDefinitions:207 - 6) Locations - http://www.parasoft.com/jsp/pr/contacts.jsp
+2020-08-17 00:48:01,611  INFO [main] StepDefinitions:207 - 7) Admin Page - https://parabank.parasoft.com/parabank/admin.htm
+2020-08-17 00:48:01,687  INFO [main] StepDefinitions:207 - 8) home - https://parabank.parasoft.com/parabank/index.htm
+2020-08-17 00:48:01,767  INFO [main] StepDefinitions:207 - 9) about - https://parabank.parasoft.com/parabank/about.htm
+2020-08-17 00:48:01,849  INFO [main] StepDefinitions:207 - 10) contact - https://parabank.parasoft.com/parabank/contact.htm
+2020-08-17 00:48:01,924  INFO [main] StepDefinitions:207 - 11) Forgot login info? - https://parabank.parasoft.com/parabank/lookup.htm
+2020-08-17 00:48:01,999  INFO [main] StepDefinitions:207 - 12) Register - https://parabank.parasoft.com/parabank/register.htm
+2020-08-17 00:48:02,081  INFO [main] StepDefinitions:207 - 13) Withdraw Funds - https://parabank.parasoft.com/parabank/services/ParaBank?wsdl
+2020-08-17 00:48:02,159  INFO [main] StepDefinitions:207 - 14) Transfer Funds - https://parabank.parasoft.com/parabank/services/ParaBank?wsdl
+2020-08-17 00:48:02,249  INFO [main] StepDefinitions:207 - 15) Check Balances - https://parabank.parasoft.com/parabank/services/ParaBank?wsdl
+2020-08-17 00:48:02,343  INFO [main] StepDefinitions:207 - 16) Make Deposits - https://parabank.parasoft.com/parabank/services/ParaBank?wsdl
+2020-08-17 00:48:02,425  INFO [main] StepDefinitions:207 - 17) Bill Pay - https://parabank.parasoft.com/parabank/services/bank?_wadl&_type=xml
+2020-08-17 00:48:02,502  INFO [main] StepDefinitions:207 - 18) Account History - https://parabank.parasoft.com/parabank/services/bank?_wadl&_type=xml
+2020-08-17 00:48:02,580  INFO [main] StepDefinitions:207 - 19) Transfer Funds - https://parabank.parasoft.com/parabank/services/bank?_wadl&_type=xml
+2020-08-17 00:48:02,659  INFO [main] StepDefinitions:207 - 20) READ MORE - https://parabank.parasoft.com/parabank/services.htm
+2020-08-17 00:48:02,734  INFO [main] StepDefinitions:207 - 21) ParaBank Is Now Re-Opened - https://parabank.parasoft.com/parabank/news.htm#6
+2020-08-17 00:48:02,816  INFO [main] StepDefinitions:207 - 22) New! Online Bill Pay - https://parabank.parasoft.com/parabank/news.htm#5
+2020-08-17 00:48:02,925  INFO [main] StepDefinitions:207 - 23) New! Online Account Transfers - https://parabank.parasoft.com/parabank/news.htm#4
+2020-08-17 00:48:03,019  INFO [main] StepDefinitions:207 - 24) READ MORE - https://parabank.parasoft.com/parabank/news.htm
+2020-08-17 00:48:03,098  INFO [main] StepDefinitions:207 - 25) Home - https://parabank.parasoft.com/parabank/index.htm
+2020-08-17 00:48:03,196  INFO [main] StepDefinitions:207 - 26) About Us - https://parabank.parasoft.com/parabank/about.htm
+2020-08-17 00:48:03,286  INFO [main] StepDefinitions:207 - 27) Services - https://parabank.parasoft.com/parabank/services.htm
+2020-08-17 00:48:03,368  INFO [main] StepDefinitions:207 - 28) Products - http://www.parasoft.com/jsp/products.jsp
+2020-08-17 00:48:03,446  INFO [main] StepDefinitions:207 - 29) Locations - http://www.parasoft.com/jsp/pr/contacts.jsp
+2020-08-17 00:48:03,554  INFO [main] StepDefinitions:207 - 30) Forum - http://forums.parasoft.com/
+2020-08-17 00:48:03,632  INFO [main] StepDefinitions:207 - 31) Site Map - https://parabank.parasoft.com/parabank/sitemap.htm
+2020-08-17 00:48:03,711  INFO [main] StepDefinitions:207 - 32) Contact Us - https://parabank.parasoft.com/parabank/contact.htm
+2020-08-17 00:48:03,789  INFO [main] StepDefinitions:207 - 33) www.parasoft.com - http://www.parasoft.com/
+2020-08-17 00:48:03,819  INFO [main] StepDefinitions:224 - File verified successfully
+2020-08-17 00:48:05,095  INFO [main] Hooks:25 - Loading chrome Driver
+2020-08-17 00:48:21,214  INFO [main] StepDefinitions:116 - Element is Displayed
+2020-08-17 00:48:30,427  INFO [main] StepDefinitions:97 - login Failed
