@@ -42,6 +42,19 @@ public class RegistrationPage extends CommonActions {
 	private WebElement Confirm;
 	@FindBy(xpath = "//input[@type='submit' and @value='Register']")
 	private WebElement Register_Submit;
+	@FindBy(xpath = "//p[contains(text(),'You are now logged in.')]")
+	private WebElement UserNameError;
+	@FindBy(xpath = "//a[contains(text(),'Log Out')]")
+	private WebElement LogOut;
+	
+	
+	public WebElement getLogOut() {
+		return LogOut;
+	}
+
+	public WebElement getUserNameError() {
+		return UserNameError;
+	}
 
 	public WebElement getRegister_link() {
 		return Register_link;
@@ -97,17 +110,17 @@ public class RegistrationPage extends CommonActions {
 
 	public void clickOnRegisterLink() {
 		try {
-			clickOn(Register_link);
+			clickOn(driver, Register_link, 5);
 		} catch (NoSuchElementException e) {
-			System.out.println(e);
+			Log.info(e);
 		}
 	}
 
 	public void clickOnRegisterSubmit() {
 		try {
-			clickOn(Register_Submit);
+			clickOn(driver, Register_Submit, 5);
 		} catch (NoSuchElementException e) {
-			System.out.println(e);
+			Log.info(e);
 		}
 	}
 

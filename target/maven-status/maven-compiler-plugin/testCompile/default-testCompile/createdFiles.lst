@@ -1,0 +1,6 @@
+Stepdefinitions\StepDefinitions.class
+Cucumber\options\TestRunner_class.class
+Utilities\CommonActions.class
+Page_Objects\HomePage.class
+Page_Objects\RegistrationPage.class
+Stepdefinitions\Hooks.class

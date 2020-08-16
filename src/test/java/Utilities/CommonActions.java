@@ -3,9 +3,13 @@ package Utilities;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +23,7 @@ public class CommonActions {
 	public static String path;
 	public static Select select;
 	public static JavascriptExecutor javaScript;
+	public static Logger Log;
 
 	public String Get_Environment_Property(String key) throws IOException {
 		Properties prop = new Properties();
@@ -32,13 +37,13 @@ public class CommonActions {
 		driver.get(url);
 	}
 
-	public void insertText(WebElement element, String value) {
-		element.sendKeys(value);
-	}
-
-	public void clickOn(WebElement element) {
-		element.click();
-	}
+//	public void insertText(WebElement element, String value) {
+//		element.sendKeys(value);
+//	}
+//
+//	public void clickOn(WebElement element) {
+//		element.click();
+//	}
 
 	public void verifyFile(String path) {
 		driver.get(path);
@@ -58,70 +63,69 @@ public class CommonActions {
 		String generatedAlphaNumeric = RandomStringUtils.randomAlphanumeric(7);
 		return generatedAlphaNumeric;
 	}
-	
-	//5.
-	//Explicit Wait to Click on any WebElement.
-	public static void clickOn(WebDriver driver, WebElement element, int timeout) 
-	{
+
+	// Explicit Wait to Click on any WebElement.
+	public void clickOn(WebDriver driver, WebElement element, int timeout) {
 		new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(element));
 		element.click();
 	}
 
-	//6.
-	//Explicit Wait to Send Data to any WebElement.
-	public static void sendKeys(WebDriver driver, WebElement element, int timeout, String value) 
-	{
+	// Explicit Wait to Send Data to any WebElement.
+	public void insertText(WebDriver driver, WebElement element, int timeout, String value) {
 		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
 		element.sendKeys(value);
 	}
 
-	//7.
-	//Explicit Wait for Element To Be Visible.
-	public static void waitForElementToBeVisible(WebDriver driver, By locator, int timeout)
-	{
-		new WebDriverWait(driver, timeout).
-		until(ExpectedConditions.visibilityOfElementLocated(locator));
+	// Explicit Wait for Element To Be Visible.
+	public void waitForElementToBeVisible(WebDriver driver, By locator, int timeout) {
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
-	
-	//17.
-		//To Match Value with List of Elements and Click on it.
-		public void clickOnMatchingValue(List<WebElement> listOfElements, String valueToBeMatched) 
-		{
-			for(WebElement element : listOfElements) 
-			{
-				if(element.getText().equalsIgnoreCase(valueToBeMatched)) 
-				{
-					element.click();
-					return;
-				}
-			}
-		}
-		
-		//To Change the Color of WebElement by using JavaScript Executor.
-		public static void changeColorByJavaScript(String color, WebElement element, WebDriver driver) 
-		{
-			javaScript = ((JavascriptExecutor) driver);
-			javaScript.executeScript("arguments[0].style.backgroundColor = '" + color + "'", element);
-			try 
-			{
-				Thread.sleep(2000);
-			} 
-			catch(InterruptedException e) 
-			{
 
+	// To Match Value with List of Elements and Click on it.
+	public void clickOnMatchingValue(List<WebElement> listOfElements, String valueToBeMatched) {
+		for (WebElement element : listOfElements) {
+			if (element.getText().equalsIgnoreCase(valueToBeMatched)) {
+				element.click();
+				return;
 			}
 		}
+	}
 
-		
-		//To Highlight WebElement by using JavaScript Executor.
-		public static void highlightElementByJavaScript(WebElement element, WebDriver driver) 
-		{
-			javaScript = ((JavascriptExecutor) driver);
-			String backgroundColor = element.getCssValue("backgroundColor");
-			for(int i = 0; i < 10; i++) 
-			{
-				changeColorByJavaScript("rgb(0, 200, 0)", element, driver);
-				changeColorByJavaScript(backgroundColor, element, driver);
-			}
+	// To Change the Color of WebElement by using JavaScript Executor.
+	public void changeColorByJavaScript(String color, WebElement element, WebDriver driver) {
+		javaScript = ((JavascriptExecutor) driver);
+		javaScript.executeScript("arguments[0].style.backgroundColor = '" + color + "'", element);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+
 		}
+	}
+
+	// To Highlight WebElement by using JavaScript Executor.
+	public void highlightElementByJavaScript(WebDriver driver, WebElement element) {
+		javaScript = ((JavascriptExecutor) driver);
+		String backgroundColor = element.getCssValue("backgroundColor");
+		for (int i = 0; i < 10; i++) {
+			changeColorByJavaScript("rgb(0, 200, 0)", element, driver);
+			changeColorByJavaScript(backgroundColor, element, driver);
+		}
+	}
+
+	// To Check Element is Displayed or No.
+	public void isElementDisplayed(WebElement element) {
+		boolean elementDisplayed = element.isDisplayed();
+		if (elementDisplayed) {
+			Log.info("Element is Displayed");
+		} else {
+			Log.info("Element is not Displayed");
+		}
+	}
+
+	// Set Date For Log4J.
+	public static void setDateForLog4j() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("_ddMMyyy_hhmmss");
+		System.setProperty("current_date", dateFormat.format(new Date()));
+		PropertyConfigurator.configure("./src/main/resources/log4j.properties");
+	}
 }

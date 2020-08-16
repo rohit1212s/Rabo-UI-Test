@@ -65,6 +65,18 @@ public class HomePage extends CommonActions {
 	private List<WebElement> WebTable;
 	@FindBy(xpath = "//p[@class='smallText']")
 	private WebElement VerifyUsername;
+	@FindBy(xpath = "//p[@class='error']")
+	private WebElement LoginError;
+	@FindBy(xpath = "//a[contains(text(),'Log Out')]")
+	private WebElement LogOut;
+	
+	
+	public WebElement getLogOut() {
+		return LogOut;
+	}
+	public WebElement getLoginError() {
+		return LoginError;
+	}
 
 	public WebElement getNewAccountId() {
 		return NewAccountId;
@@ -148,25 +160,24 @@ public class HomePage extends CommonActions {
 
 	public String webtable(String value) {
 		int size = getWebTable().size();
-		System.out.println(size);
+		//Log.info(size);
 		String acnt_number = "";
 		try {
 			for (int j = 1; j < size; j++) {
-
 				WebElement findElement = driver
 						.findElement(By.xpath("//table[@id='accountTable']/tbody/tr[" + j + "]/td[1]"));
 				String text = findElement.getText();
-				System.out.println(text);
+				Log.info(text);
 				if (text.equals(value)) {
 					acnt_number = text;
 				}
 			}
 
 		} catch (StaleElementReferenceException e) {
-			System.out.println(e);
+			Log.info(e);
 
 		}catch(NoSuchElementException e) {
-			System.out.println(e);
+			Log.info(e);
 		}
 		return acnt_number;
 	}
@@ -193,16 +204,26 @@ public class HomePage extends CommonActions {
 			List<WebElement> all_links = getAll_links();
 			int i = 0;
 			for (WebElement link : all_links) {
-				System.out.println(++i + ") " + link.getText() + " - " + link.getAttribute("href"));
+				Log.info(++i + ") " + link.getText() + " - " + link.getAttribute("href"));
 				String value = link.getText() + " - " + link.getAttribute("href");
 				bw.write(value);
 				bw.newLine();
 			}
 			bw.close();
 		} catch (IOException e) {
-			System.out.println(e);
+			Log.info(e);
 		}
-
+	}
+	
+	//To verify if file exists or not
+	public void verifyFile() {
+		path = ".//TestData//alllinks.txt";
+		File file = new File(path);
+		boolean exists = file.exists();
+		if(exists) {
+			Log.info("File verified successfully");
+		}else
+		Log.info("File not created");
 	}
 
 }

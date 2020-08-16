@@ -8,14 +8,8 @@ Admin Page - https://parabank.parasoft.com/parabank/admin.htm
 home - https://parabank.parasoft.com/parabank/index.htm
 about - https://parabank.parasoft.com/parabank/about.htm
 contact - https://parabank.parasoft.com/parabank/contact.htm
-Open New Account - https://parabank.parasoft.com/parabank/openaccount.htm
-Accounts Overview - https://parabank.parasoft.com/parabank/overview.htm
-Transfer Funds - https://parabank.parasoft.com/parabank/transfer.htm
-Bill Pay - https://parabank.parasoft.com/parabank/billpay.htm
-Find Transactions - https://parabank.parasoft.com/parabank/findtrans.htm
-Update Contact Info - https://parabank.parasoft.com/parabank/updateprofile.htm
-Request Loan - https://parabank.parasoft.com/parabank/requestloan.htm
-Log Out - https://parabank.parasoft.com/parabank/logout.htm
+Forgot login info? - https://parabank.parasoft.com/parabank/lookup.htm
+Register - https://parabank.parasoft.com/parabank/register.htm
 Withdraw Funds - https://parabank.parasoft.com/parabank/services/ParaBank?wsdl
 Transfer Funds - https://parabank.parasoft.com/parabank/services/ParaBank?wsdl
 Check Balances - https://parabank.parasoft.com/parabank/services/ParaBank?wsdl
