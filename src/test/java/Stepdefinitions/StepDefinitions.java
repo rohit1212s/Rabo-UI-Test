@@ -2,7 +2,8 @@ package Stepdefinitions;
 
 import java.io.IOException;
 
-import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.NoSuchElementException;
+
 import Page_Objects.HomePage;
 import Page_Objects.RegistrationPage;
 import Utilities.CommonActions;
@@ -14,10 +15,11 @@ import static org.junit.Assert.*;
 
 public class StepDefinitions extends CommonActions {
 	String newAccountID = "";
-
-	RegistrationPage rp = new RegistrationPage();
+	static int wait = 5;
 	public static String userName = "";
+	RegistrationPage rp = new RegistrationPage();
 	HomePage hp = new HomePage();
+	
 
 	@Given("Open Browser and launch the URL")
 	public void open_Browser_and_launch_the_URL() throws IOException {
@@ -26,7 +28,7 @@ public class StepDefinitions extends CommonActions {
 
 	@When("User click on Register button to create a new account")
 	public void user_click_on_Register_button_to_create_a_new_account() {
-		// highlightElementByJavaScript(driver, rp.getRegister_link());
+		//highlightElementByJavaScript(driver, rp.getRegister_link());
 		rp.clickOnRegisterLink();
 	}
 
@@ -35,70 +37,71 @@ public class StepDefinitions extends CommonActions {
 			String city, String state, String zipCode, String phone, String SSN, String userName, String password,
 			String confirm) {
 
-		insertText(driver, rp.getFirstName(), 5, firstName);
-		insertText(driver, rp.getLastName(), 5, lastName);
-		insertText(driver, rp.getAddress(), 5, address);
-		insertText(driver, rp.getCity(), 5, city);
-		insertText(driver, rp.getState(), 5, state);
-		insertText(driver, rp.getZipCode(), 5, zipCode);
-		insertText(driver, rp.getPhoneNumber(), 5, phone);
-		insertText(driver, rp.getSSN(), 5, SSN);
+		insertText(driver, rp.getFirstName(), wait, firstName);
+		insertText(driver, rp.getLastName(), wait, lastName);
+		insertText(driver, rp.getAddress(), wait, address);
+		insertText(driver, rp.getCity(), wait, city);
+		insertText(driver, rp.getState(), wait, state);
+		insertText(driver, rp.getZipCode(), wait, zipCode);
+		insertText(driver, rp.getPhoneNumber(), wait, phone);
+		insertText(driver, rp.getSSN(), wait, SSN);
 		// userName=randomAlphaNumeric();
-		insertText(driver, rp.getUsername(), 5, userName);
-		insertText(driver, rp.getPassword(), 5, password);
-		insertText(driver, rp.getConfirm(), 5, confirm);
-
+		insertText(driver, rp.getUsername(), wait, userName);
+		insertText(driver, rp.getPassword(), wait, password);
+		insertText(driver, rp.getConfirm(), wait, confirm);
 	}
 
 	@When("User click on Register button under the registration form")
 	public void user_click_on_Register_button_under_the_registration_form() {
-		clickOn(driver, rp.getRegister_Submit(), 5);
-
+		clickOn(driver, rp.getRegister_Submit(), wait);
 	}
 
 	@Then("User should displayed the message Your account was created successfully. You are now logged in. {string}")
 	public void user_should_displayed_the_message(String loginConfirm) {
-		assertEquals(rp.getUserNameError().getText(), loginConfirm);
+		assertEquals("Login Successful", rp.getUserNameError().getText(), loginConfirm);
 
 	}
 
 	@And("User should logout from the application")
 	public void User_should_logout_from_the_application() {
-		clickOn(driver, hp.getLogOut(), 5);
-		//clickOn(driver, hp.getLog_In(), 5);
+		clickOn(driver, hp.getLogOut(), wait);
+		// clickOn(driver, hp.getLog_In(), wait);
 	}
 
 	@Given("User logged in by his credentials {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
 	public void user_logged_in_by_his_credentials(String userName, String password, String firstName, String lastName,
 			String address, String city, String state, String zip_Code, String SSN) throws InterruptedException {
-		insertText(driver, hp.getUsername(), 5, userName);
-		insertText(driver, hp.getPassword(), 5, password);
-		clickOn(driver, hp.getLog_In(), 5);
-		assertEquals(hp.getVerifyUsername(), "Welcome" + "" + firstName + "" + lastName);
+		insertText(driver, hp.getUsername(), wait, userName);
+		insertText(driver, hp.getPassword(), wait, password);
+		clickOn(driver, hp.getLog_In(), wait);
+
 		// String Veryfiy_user_name = hp.getVerifyUsername().getText();
 		// Log.info(Veryfiy_user_name);
 		// if(Veryfiy_user_name.equalsIgnoreCase(anotherString))
+		if (isElementDisplayed(hp.getLoginError())) {
 
-		try {
-			isElementDisplayed(hp.getLoginError());
-			highlightElementByJavaScript(driver, hp.getLoginError());
-			clickOn(driver, hp.getForgot_Login(), 5);
-			insertText(driver, hp.getFirstName(), 5, firstName);
-			insertText(driver, hp.getLastName(), 5, lastName);
-			insertText(driver, hp.getAddress(), 5, address);
-			insertText(driver, hp.getCity(), 5, city);
-			insertText(driver, hp.getState(), 5, state);
-			insertText(driver, hp.getZipCode(), 5, zip_Code);
-			insertText(driver, hp.getSSN(), 5, SSN);
-			clickOn(driver, hp.getFind_My_Login_Info(), 5);
-		} catch (ElementNotVisibleException e) {
-			Log.info("Exception handled");
+			changeColorByJavaScript("Yellow", hp.getLoginError(), driver);
+			clickOn(driver, hp.getForgot_Login(), wait);
+			insertText(driver, hp.getFirstName(), wait, firstName);
+			insertText(driver, hp.getLastName(), wait, lastName);
+			insertText(driver, hp.getAddress(), wait, address);
+			insertText(driver, hp.getCity(), wait, city);
+			insertText(driver, hp.getState(), wait, state);
+			insertText(driver, hp.getZipCode(), wait, zip_Code);
+			insertText(driver, hp.getSSN(), wait, SSN);
+			clickOn(driver, hp.getFind_My_Login_Info(), wait);
+			try {
+				assertEquals("Login Failed", hp.getVerifyUsername(), "Welcome" + "" + firstName + "" + lastName);
+			} catch (NoSuchElementException E) {
+				assertNotEquals("login Failed", E, hp.getVerifyUsername());
+				Log.info("login Failed");
+			}
 		}
 	}
 
 	@When("User clicks on Home link")
 	public void user_clicks_on_Home_link() {
-		clickOn(driver, hp.getHome(), 5);
+		clickOn(driver, hp.getHome(), wait);
 	}
 
 	@When("User write all the name of links present in the notepad")
@@ -114,7 +117,7 @@ public class StepDefinitions extends CommonActions {
 
 	@When("User click on the Open New Account link on the home page")
 	public void user_click_on_the_Open_New_Account_link_on_the_home_page() {
-		clickOn(driver, hp.getOpen_New_Account(), 5);
+		clickOn(driver, hp.getOpen_New_Account(), wait);
 
 	}
 
@@ -122,7 +125,7 @@ public class StepDefinitions extends CommonActions {
 	public void create_an_account_by_entering_the_values(String accountType) {
 		selectValueFromDropDownByText(hp.getSelect_Account_Type(), accountType);
 		selectValueFromDropDownByIndex(hp.getSelect_Balance(), 0);
-		clickOn(driver, hp.getOpen_New_Accnt(), 5);
+		clickOn(driver, hp.getOpen_New_Accnt(), wait);
 	}
 
 	@Then("Message will be displayed as Your new account number: xxxxx capture the account number")
@@ -136,11 +139,10 @@ public class StepDefinitions extends CommonActions {
 	@And("Click on the Accounts Overview link and verify the created account number is displayed")
 	public void click_on_the_Accounts_Overview_link_and_verify_the_created_account_number_is_displayed()
 			throws InterruptedException {
-		clickOn(driver, hp.getAccount_Overview(), 5);
-		Thread.sleep(5000);
+		clickOn(driver, hp.getAccount_Overview(), wait);
 		String actNumber = hp.webtable(newAccountID);
 		Log.info(actNumber);
-		assertEquals(newAccountID, actNumber);
+		assertEquals("Account number verified", newAccountID, actNumber);
 
 	}
 

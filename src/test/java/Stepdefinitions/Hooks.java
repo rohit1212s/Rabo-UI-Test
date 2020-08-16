@@ -1,6 +1,5 @@
 package Stepdefinitions;
 
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -16,8 +15,6 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 public class Hooks extends CommonActions {
-		
-	//CommonActions ca = new CommonActions();
 
 	@Before
 	public void beforeScenarioChrome() {
@@ -46,7 +43,7 @@ public class Hooks extends CommonActions {
 			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}		
+		}
 	}
 
 	@After

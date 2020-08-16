@@ -14,10 +14,10 @@ Feature: Create User
 
     Examples: 
       | firstName | lastName | address    | city     | state         | zipCode | phone      | SSN       | userName  | password | confirm | loginConfirm                                                  |
-      | Rohit     | kumar    | Notenplien | Den Haag | south Holland | 2555ZZ  | 0684105405 | 123456789 | rohit1219 |   123456 |  123456 | Your account was created successfully. You are now logged in. |
+      | Rohit     | kumar    | Notenplien | Den Haag | south Holland | 2555ZZ  | 0684105405 | 123456789 | rohit12113 |   123456 |  123456 | Your account was created successfully. You are now logged in. |
 
   @homelink
-  Scenario Outline: Writting the all links name present in the home page into the notepad
+  Scenario Outline: Writing the all links name present in the home page into the notepad
     Given Open Browser and launch the URL
     And User logged in by his credentials "<userName>", "<password>", "<firstName>", "<lastName>", "<address>", "<city>", "<state>", "<zipCode>", "<SSN>"
     When User clicks on Home link
@@ -26,7 +26,7 @@ Feature: Create User
 
     Examples: 
       | userName  | password | firstName | lastName | address    | city     | state         | zipCode | SSN       |
-      | rohit1212 |   123456 | Rohit     | kumar    | Notenplien | Den Haag | south Holland | 2555ZZ  | 123456789 |
+      | rohit12113 |   123456 | Rohit     | kumar    | Notenplien | Den Haag | south Holland | 2555ZZ  | 123456789 |
 
   @verifyaccount
   Scenario Outline: Opening new Account from the home page link
@@ -40,4 +40,4 @@ Feature: Create User
 
     Examples: 
       | userName  | password | firstName | lastName | address    | city     | state         | zipCode | SSN       | accountType |
-      | rohit1212 |   123456 | Rohit     | kumar    | Notenplien | Den Haag | south Holland | 2555ZZ  | 123456789 | SAVINGS     |
+      | rohit12113 |   123456 | Rohit     | kumar    | Notenplien | Den Haag | south Holland | 2555ZZ  | 123456789 | SAVINGS     |
