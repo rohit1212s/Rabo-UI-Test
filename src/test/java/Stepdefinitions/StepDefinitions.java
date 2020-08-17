@@ -3,7 +3,6 @@ package Stepdefinitions;
 import java.io.IOException;
 
 import org.openqa.selenium.NoSuchElementException;
-
 import Page_Objects.HomePage;
 import Page_Objects.RegistrationPage;
 import Utilities.CommonActions;
@@ -78,6 +77,7 @@ public class StepDefinitions extends CommonActions {
 		// String Veryfiy_user_name = hp.getVerifyUsername().getText();
 		// Log.info(Veryfiy_user_name);
 		// if(Veryfiy_user_name.equalsIgnoreCase(anotherString))
+		try {
 		if (isElementDisplayed(hp.getLoginError())) {
 
 			changeColorByJavaScript("Yellow", hp.getLoginError(), driver);
@@ -90,13 +90,13 @@ public class StepDefinitions extends CommonActions {
 			insertText(driver, hp.getZipCode(), wait, zip_Code);
 			insertText(driver, hp.getSSN(), wait, SSN);
 			clickOn(driver, hp.getFind_My_Login_Info(), wait);
-			try {
+		}
 				assertEquals("Login Failed", hp.getVerifyUsername(), "Welcome" + "" + firstName + "" + lastName);
 			} catch (NoSuchElementException E) {
 				assertNotEquals("login Failed", E, hp.getVerifyUsername());
-				Log.info("login Failed");
+				//Log.info("login Failed");
 			}
-		}
+		
 	}
 
 	@When("User clicks on Home link")
@@ -140,7 +140,8 @@ public class StepDefinitions extends CommonActions {
 	public void click_on_the_Accounts_Overview_link_and_verify_the_created_account_number_is_displayed()
 			throws InterruptedException {
 		clickOn(driver, hp.getAccount_Overview(), wait);
-		String actNumber = hp.webtable(newAccountID);
+		String actNumber = hp.clickOnMatchingValue(hp.getWebTable(),newAccountID);
+		//String actNumber = hp.webtable(newAccountID);
 		Log.info(actNumber);
 		assertEquals("Account number verified", newAccountID, actNumber);
 

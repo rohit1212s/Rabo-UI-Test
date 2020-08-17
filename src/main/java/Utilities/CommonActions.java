@@ -79,14 +79,14 @@ public class CommonActions {
 	}
 
 	// To Match Value with List of Elements and Click on it.
-	public void clickOnMatchingValue(List<WebElement> listOfElements, String valueToBeMatched) {
-		for (WebElement element : listOfElements) {
-			if (element.getText().equalsIgnoreCase(valueToBeMatched)) {
-				element.click();
-				return;
-			}
-		}
-	}
+	/*
+	 * public String clickOnMatchingValue(List<WebElement> listOfElements, String
+	 * valueToBeMatched) { String actId=""; for (WebElement element :
+	 * listOfElements) { if (element.getText().equalsIgnoreCase(valueToBeMatched)) {
+	 * actId= element.getText();
+	 * 
+	 * } } return actId; }
+	 */
 
 	// To Change the Color of WebElement by using JavaScript Executor.
 	public void changeColorByJavaScript(String color, WebElement element, WebDriver driver) {

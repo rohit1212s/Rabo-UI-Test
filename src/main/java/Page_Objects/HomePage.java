@@ -160,7 +160,7 @@ public class HomePage extends CommonActions {
 	//To verify a element exists in a webtable
 	public String webtable(String value) {
 		int size = getWebTable().size();
-		//Log.info(size);
+		Log.info("Size is="+size);
 		String acnt_number = "";
 		try {
 			for (int j = 1; j < size; j++) {
@@ -182,6 +182,20 @@ public class HomePage extends CommonActions {
 		return acnt_number;
 	}
 
+	
+	// To Match Value with List of Elements and Click on it.
+	public String clickOnMatchingValue(List<WebElement> listOfElements, String valueToBeMatched) {
+		String actId="";
+		System.out.println(listOfElements.size());
+		for (WebElement element : listOfElements) {
+			if (element.getText().equalsIgnoreCase(valueToBeMatched)) {
+			actId=	element.getText();
+				
+			}
+		}
+		return actId;
+	}
+	
 	public WebElement getAccount_Overview() {
 		return Account_Overview;
 	}
