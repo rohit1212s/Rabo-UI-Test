@@ -69,8 +69,14 @@ public class HomePage extends CommonActions {
 	private WebElement LoginError;
 	@FindBy(xpath = "//a[contains(text(),'Log Out')]")
 	private WebElement LogOut;
+	@FindBy(xpath = "//b[contains(text(),'Total')]")
+	private WebElement Total;
 	
 	
+	
+	public WebElement getTotal() {
+		return Total;
+	}
 	public WebElement getLogOut() {
 		return LogOut;
 	}
@@ -186,7 +192,6 @@ public class HomePage extends CommonActions {
 	// To Match Value with List of Elements and Click on it.
 	public String clickOnMatchingValue(List<WebElement> listOfElements, String valueToBeMatched) {
 		String actId="";
-		System.out.println(listOfElements.size());
 		for (WebElement element : listOfElements) {
 			if (element.getText().equalsIgnoreCase(valueToBeMatched)) {
 			actId=	element.getText();

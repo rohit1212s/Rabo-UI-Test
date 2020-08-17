@@ -15,7 +15,6 @@ import io.cucumber.junit.CucumberOptions;
 				monochrome = true, 
 				tags="@registration or @homelink or @verifyaccount")
 // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-//@registration or @homelink or @verifyaccount
 public class TestRunner {
 
 }

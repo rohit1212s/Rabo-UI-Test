@@ -139,9 +139,11 @@ public class StepDefinitions extends CommonActions {
 	@And("Click on the Accounts Overview link and verify the created account number is displayed")
 	public void click_on_the_Accounts_Overview_link_and_verify_the_created_account_number_is_displayed()
 			throws InterruptedException {
+		highlightElementByJavaScript(driver, hp.getAccount_Overview());
 		clickOn(driver, hp.getAccount_Overview(), wait);
+		visibilityOfElement(driver,hp.getTotal(), wait);
+		Thread.sleep(3000);
 		String actNumber = hp.clickOnMatchingValue(hp.getWebTable(),newAccountID);
-		//String actNumber = hp.webtable(newAccountID);
 		Log.info(actNumber);
 		assertEquals("Account number verified", newAccountID, actNumber);
 

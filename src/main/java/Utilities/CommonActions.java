@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Properties;
 //import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Logger;
@@ -71,6 +70,11 @@ public class CommonActions {
 	public void insertText(WebDriver driver, WebElement element, int timeout, String value) {
 		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
 		element.sendKeys(value);
+	}
+	
+	// Explicit Wait to check WebElement visible.
+	public void visibilityOfElement(WebDriver driver, WebElement element, int timeout) {
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
 	}
 
 	// Explicit Wait for Element To Be Visible.
