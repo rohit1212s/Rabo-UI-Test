@@ -69,7 +69,7 @@ public class HomePage extends CommonActions {
 	private WebElement LoginError;
 	@FindBy(xpath = "//a[contains(text(),'Log Out')]")
 	private WebElement LogOut;
-	@FindBy(xpath = "//b[contains(text(),'Total')]")
+	@FindBy(xpath = "//table[@id='accountTable']/tbody/tr[2]/td[1]")
 	private WebElement Total;
 	
 	

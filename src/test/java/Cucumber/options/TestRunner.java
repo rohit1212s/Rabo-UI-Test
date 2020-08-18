@@ -14,6 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 				plugin = {"json:target/jsonReports/cucumber-report.json","json:target/reports.json"}, 
 				monochrome = true, 
 				tags="@registration or @homelink or @verifyaccount")
+
 // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 public class TestRunner {
 

@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 public class StepDefinitions extends CommonActions {
 	String newAccountID = "";
-	static int wait = 5;
+	static int wait = 30;
 	public static String userName = "";
 	RegistrationPage rp = new RegistrationPage();
 	HomePage hp = new HomePage();
@@ -31,9 +31,9 @@ public class StepDefinitions extends CommonActions {
 		rp.clickOnRegisterLink();
 	}
 
-	@When("User enters data for all the required fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
+	@When("User enters data for all the required fields {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
 	public void user_enters_data_for_all_the_required_fields(String firstName, String lastName, String address,
-			String city, String state, String zipCode, String phone, String SSN, String userName, String password,
+			String city, String state, String zipCode, String phone, String SSN, String password,
 			String confirm) {
 
 		insertText(driver, rp.getFirstName(), wait, firstName);
@@ -44,7 +44,7 @@ public class StepDefinitions extends CommonActions {
 		insertText(driver, rp.getZipCode(), wait, zipCode);
 		insertText(driver, rp.getPhoneNumber(), wait, phone);
 		insertText(driver, rp.getSSN(), wait, SSN);
-		// userName=randomAlphaNumeric();
+		userName=randomNumber();
 		insertText(driver, rp.getUsername(), wait, userName);
 		insertText(driver, rp.getPassword(), wait, password);
 		insertText(driver, rp.getConfirm(), wait, confirm);
@@ -67,9 +67,10 @@ public class StepDefinitions extends CommonActions {
 		// clickOn(driver, hp.getLog_In(), wait);
 	}
 
-	@Given("User logged in by his credentials {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-	public void user_logged_in_by_his_credentials(String userName, String password, String firstName, String lastName,
+	@Given("User logged in by his credentials {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
+	public void user_logged_in_by_his_credentials(String password, String firstName, String lastName,
 			String address, String city, String state, String zip_Code, String SSN) throws InterruptedException {
+		
 		insertText(driver, hp.getUsername(), wait, userName);
 		insertText(driver, hp.getPassword(), wait, password);
 		clickOn(driver, hp.getLog_In(), wait);
@@ -122,14 +123,19 @@ public class StepDefinitions extends CommonActions {
 	}
 
 	@And("Create an account by entering the values {string}")
-	public void create_an_account_by_entering_the_values(String accountType) {
+	public void create_an_account_by_entering_the_values(String accountType)throws InterruptedException  {
 		selectValueFromDropDownByText(hp.getSelect_Account_Type(), accountType);
-		selectValueFromDropDownByIndex(hp.getSelect_Balance(), 0);
+		Thread.sleep(2000);
+		selectValueFromDropDownByIndex((visibilityOfElementSelect(driver,hp.getSelect_Balance(),wait)), 0);
+		Thread.sleep(2000);
+		//clickElementByJavaScript(driver, hp.getOpen_New_Accnt());
 		clickOn(driver, hp.getOpen_New_Accnt(), wait);
+		Log.info("Clicked on New account button");
 	}
 
 	@Then("Message will be displayed as Your new account number: xxxxx capture the account number")
 	public void message_will_be_displayed_as_Your_new_account_number_xxxxx_capture_the_account_number() {
+		visibilityOfElement(driver, hp.getNewAccountId(),wait);
 		highlightElementByJavaScript(driver, hp.getNewAccountId());
 		newAccountID = hp.getNewAccountId().getText();
 		Log.info(newAccountID);
@@ -142,7 +148,8 @@ public class StepDefinitions extends CommonActions {
 		highlightElementByJavaScript(driver, hp.getAccount_Overview());
 		clickOn(driver, hp.getAccount_Overview(), wait);
 		visibilityOfElement(driver,hp.getTotal(), wait);
-		Thread.sleep(3000);
+		//Thread.sleep(10000);
+		highlightElementByJavaScript(driver, hp.getTotal());
 		String actNumber = hp.clickOnMatchingValue(hp.getWebTable(),newAccountID);
 		Log.info(actNumber);
 		assertEquals("Account number verified", newAccountID, actNumber);
